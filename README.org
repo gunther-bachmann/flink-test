@@ -1,0 +1,20 @@
+#+title: Flink Tests
+* prerequisites
+  - direnv https://direnv.net/
+  - lorri https://github.com/target/lorri
+  - nix https://nixos.org/nix/
+see https://ci.apache.org/projects/flink/flink-docs-release-1.10/getting-started/examples/ for more examples
+* usage
+  #+begin_src sh
+    cd example
+    g shadowJar      # produce build/libs/*.jar
+    start-cluster.sh # start a cluster
+    # open a second terminal and write 'nc -l 9000' and submit words via return (end with C-c C-c)
+    ./run-flink-program.sh
+    # end with C-c C-c
+  #+end_src
+* interesting links
+  - https://dzone.com/articles/implementing-flink-batch-data-connector
+  - https://ci.apache.org/projects/flink/flink-docs-stable/dev/batch/
+  - https://ci.apache.org/projects/flink/flink-docs-stable/ops/config.html
+  - https://dzone.com/articles/apache-flink-basic-transformation-example
